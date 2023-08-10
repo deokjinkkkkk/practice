@@ -1,7 +1,8 @@
-package com.dj.practice1;
+package com.dj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class Practice1Application {
