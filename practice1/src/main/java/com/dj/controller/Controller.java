@@ -1,14 +1,14 @@
 package com.dj.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
 
-@RestController
+@org.springframework.stereotype.Controller
 public class Controller {
 	
-	@GetMapping("/main")
+	@GetMapping("/")
 	public String main() {
-		
-		return "home.html";
+		return "home";
 	}
+
 }

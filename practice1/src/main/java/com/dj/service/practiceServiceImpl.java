@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dj.dao.Practice;
-import com.dj.model.Member;
+import com.dj.model.MemberVO;
 
 public class practiceServiceImpl implements PracticeService {
 	
 	@Autowired
 	Practice practice;
 	@Override
-	public List<Member> selectList() {
+	public List<MemberVO> selectList() {
 		// TODO Auto-generated method stub
 		return practice.selectList();
 	}

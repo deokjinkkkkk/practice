@@ -5,4 +5,7 @@
 	SELECT member_id
 	FROM member
 	</select>
+	<insert id="BoardSave">
+	insert into Board value('#value')
+	</insert>
 </mapper>

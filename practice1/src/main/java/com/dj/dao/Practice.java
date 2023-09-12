@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.dj.model.Member;
+import com.dj.model.MemberVO;
 
 @Mapper
 public interface Practice {
-	public List<Member> selectList();
+	public List<MemberVO> selectList();
 }

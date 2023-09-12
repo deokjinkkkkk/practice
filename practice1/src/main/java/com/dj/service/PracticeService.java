@@ -2,8 +2,8 @@ package com.dj.service;
 
 import java.util.List;
 
-import com.dj.model.Member;
+import com.dj.model.MemberVO;
 
 public interface PracticeService {
-	public List<Member> selectList();
+	public List<MemberVO> selectList();
 }
