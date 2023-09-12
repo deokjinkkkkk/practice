@@ -13,6 +13,6 @@
 - sqld 공부 한다고 못한거 시작
 - 게시판 글 작성페이지 만들기
 - 미리 만들어둔 DB를 사용하여 작업하다보니 180일을 넘겨서 비밀번호 수정함
-- 제목 없음
+- ![제목 없음](https://github.com/deokjinkkkkk/practice/assets/116549186/d6a4a05b-30cd-4d4a-9bbf-69e8a311208a)
 
 
