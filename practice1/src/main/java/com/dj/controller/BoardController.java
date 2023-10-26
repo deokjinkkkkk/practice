@@ -23,6 +23,6 @@ public class BoardController {
 	@PostMapping("/save")
 	public String save(@ModelAttribute MemberVO vo) {
 		practice.selectList();
-		return "";
+		return "saveForm";
 	}
 }
