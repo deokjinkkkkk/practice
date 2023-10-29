@@ -2,8 +2,11 @@ package com.dj.service;
 
 import java.util.List;
 
-import com.dj.model.MemberVO;
+import org.springframework.stereotype.Service;
+
+import com.dj.model.BoardVO;
+
 
 public interface PracticeService {
-	public List<MemberVO> selectList();
+	public List<BoardVO> selectList();
 }

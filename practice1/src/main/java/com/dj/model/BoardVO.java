@@ -10,7 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 //DTO,VO,Bean은 비슷한 의미를 가진다.
-public class MemberVO {
+public class BoardVO {
+	private String BoardId;
 	private String memberId; //회원아이디
 	private String memberName; //회원이름
 	private String boardTitle; //글제목

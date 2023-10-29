@@ -31,21 +31,13 @@
 </template>
 
 <script>
-import axios from 'axios';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
-  created(){
-    axios.get('http://loaclhost:8080/board/save')
-      .then(function(response){
-        console.log(response);
-      })
-      .catch(function(error){
-        console.log(error);
-      });
-  },
+  
 }
 </script>
 
