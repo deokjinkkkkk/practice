@@ -17,5 +17,10 @@ public class PracticeServiceImpl implements PracticeService {
 		// TODO Auto-generated method stub
 		return practice.selectList();
 	}
+	@Override
+	public int BoardInsert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return practice.BoardInsert(vo);
+	}
 
 }

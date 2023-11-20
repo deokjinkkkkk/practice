@@ -5,7 +5,8 @@
 	SELECT *
 	FROM BOARD
 	</select>
-	 <insert id="insertBoard">
-        insert into Board value(#{value})
+	 <insert id="BoardInsert">
+        insert into Board(board_title,board_contents)
+        values(#{boardTitle},#{boardContents})
     </insert>
 </mapper>

@@ -7,4 +7,5 @@ import com.dj.model.BoardVO;
 
 public interface PracticeMapper {
 	public List<BoardVO> selectList();
+	public int BoardInsert(BoardVO vo);
 }
