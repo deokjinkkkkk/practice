@@ -1,4 +1,4 @@
-e3<template>
+<template>
   <PageHeader/>
   <router-view/>
   <PageFooter/>
@@ -20,8 +20,15 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'jua';
+  src: url('../public/fonts/ttf/BMDOHYEON_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'jua', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

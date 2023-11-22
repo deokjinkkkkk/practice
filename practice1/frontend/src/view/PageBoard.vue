@@ -1,24 +1,26 @@
+
 <template>
   <div id="app" class="container mt-5">
-    <h1 class="mb-4">게시판</h1>
-    <form @submit.prevent="addPost" class="mb-4">
-      <div class="mb-3">
-        <label for="title" class="form-label">제목:</label>
-        <input type="text" id="title" v-model="post.boardTitle" class="form-control" required>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">게시물 목록</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li v-for="post in posts" :key="post.id" class="list-group-item">
+              <strong>{{ post.boardTitle }}</strong>
+            </li>
+          </ul>
+          <div class="card-footer text-center">
+            <router-link to="/board/create" class="btn btn-success">게시물 작성하기</router-link>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="content" class="form-label">내용:</label>
-        <textarea id="content" v-model="post.boardContents" class="form-control" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">게시물 작성</button>
-    </form> 
-    <ul class="list-group">
-      <li v-for="post in posts" :key="post.id" class="list-group-item">
-        <strong>{{ post.boardTitle }}</strong>: {{ post.boardContents }}
-      </li>
-    </ul>
+    </div>
   </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -35,7 +37,7 @@ export default {
   },
   methods: {
     fetchPosts() {
-      axios.get('http://localhost:8080/board/list')
+      axios.get('http://localhost/board/list')
         .then(response => {
           this.posts = response.data;
         })
@@ -44,7 +46,7 @@ export default {
         });
     },
     addPost() {
-      axios.post('http://localhost:8080/board/posts', this.post)
+      axios.post('http://localhost/board/posts', this.post)
         .then(() => {
           this.post = { boardTitle: '', boardContents: '' };
           this.fetchPosts();

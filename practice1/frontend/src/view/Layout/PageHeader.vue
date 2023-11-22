@@ -1,7 +1,7 @@
 <!-- PageHeader.vue -->
 <template>
+  
     <header>
-
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
@@ -23,3 +23,4 @@
   <style scoped>
   
   </style>
+  

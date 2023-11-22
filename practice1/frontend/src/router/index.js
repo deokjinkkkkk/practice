@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageHome from '@/view/PageHome.vue'
 import PageBoard from '@/view/PageBoard.vue'
+import BoardCreate from '@/view/BoardCreate'
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: '/board/list',
     name: 'Board',
     component: PageBoard
+  },
+  {
+    path: '/board/create',
+    name: 'BoardCreate',
+    component: BoardCreate
   }
 ]
 
@@ -28,4 +34,4 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;

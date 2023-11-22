@@ -4,6 +4,7 @@
 	<select id="selectList" resultType="com.dj.model.BoardVO">
 	SELECT *
 	FROM BOARD
+	ORDER BY Board_Id
 	</select>
 	 <insert id="BoardInsert">
         insert into Board(board_title,board_contents)
