@@ -1,55 +1,63 @@
 <template>
-  <div id="app" class="container mt-5">
+    <div id="app" class="container mt-5">
       <h1 class="mb-4">영화 추천</h1>
-      
       <div class="row">
-          <div v-for="movie in movies" :key="movie.id" class="col-md-4 mb-4">
-              <div class="card">
-                  <img :src="movie.poster" class="card-img-top" alt="Movie Poster">
-                  <div class="card-body">
-                      <h5 class="card-title">{{ movie.title }}</h5>
-                      <p class="card-text">{{ movie.description }}</p>
-                      <a @click="showMovieDetails(movie.id)" class="btn btn-primary">자세히 보기</a>
-                  </div>
-              </div>
+        <div v-for="movie in movies" :key="movie.id" class="col-md-4 mb-4">
+          <div class="card">
+            <img :src="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" class="card-img-top" alt="Movie Poster">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.original_title }}</h5>
+              <p class="card-text">{{ movie.overview }}</p>
+              <a @click="showMovieDetails(movie.id)" class="btn btn-primary">자세히 보기</a>
+            </div>
           </div>
+        </div>
       </div>
-  
       <div v-if="selectedMovie">
-          <h2 class="mt-5">{{ selectedMovie.title }}</h2>
-          <p>{{ selectedMovie.description }}</p>
-          <!-- 추가적인 영화 정보 표시 -->
+        <h2 class="mt-5">{{ selectedMovie.title }}</h2>
+        <p>{{ selectedMovie.description }}</p>
+        <!-- 추가적인 영화 정보 표시 -->
       </div>
-  </div>
-</template>
-
-<script>
-
-export default {
-      data() {
-        return{
-          movies: [
-              {
-                  id: 1,
-                  title: '인셉션',
-                  description: '꿈 속의 꿈 속의 여정을 다루는 사이킷 액션 영화',
-                  poster: 'https://example.com/poster1.jpg'
-              },
-              {
-                  id: 2,
-                  title: '인터스텔라',
-                  description: '우주 여행을 다루는 과학적 SF 영화',
-                  poster: 'https://example.com/poster2.jpg'
-              },
-              // 다른 영화들 추가
-          ],
-            }
+    </div>
+  </template>
+  
+  <script>
+  import axios from 'axios';
+  
+  export default {
+    data() {
+      return {
+        movies: [],
+        selectedMovie: null
+      };
+    },
+    methods: {
+      async showMovieDetails(movieId) {
+        try {
+          // Axios를 사용하여 GET 요청 보내기
+          const response = await axios.get(`http://localhost/movies/${movieId}`);
+  
+          // API 응답이 현재 데이터와 유사한 구조를 가진다고 가정합니다
+          this.selectedMovie = response.data;
+        } catch (error) {
+          console.error('영화 세부 정보를 가져오는 중 오류 발생:', error);
+        }
       },
-      methods: {
-          showMovieDetails(movieId) {
-              // 선택한 영화의 상세 정보 표시 로직
-              this.selectedMovie = this.movies.find(movie => movie.id === movieId);
-          }
+      async loadMovies() {
+        try {
+          // Make a GET request to fetch the movie list
+          const response = await axios.get('http://localhost/movies/list');
+            console.log(response.data)
+          // Assuming your API response has a similar structure as your current data
+          this.movies = response.data;
+        } catch (error) {
+          console.error('Error fetching movie list:', error);
+        }
       }
-  }
-</script>
+    },
+    mounted() {
+      // Load movies when the component is mounted
+      this.loadMovies();
+    }
+  };
+  </script>
