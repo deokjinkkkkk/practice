@@ -13,7 +13,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080") // Vue.js의 주소로 변경
+                        .allowedOrigins("http://localhost:8081") // Vue.js의 주소로 변경
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
             }
         };

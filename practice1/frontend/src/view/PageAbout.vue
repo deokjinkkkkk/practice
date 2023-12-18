@@ -36,7 +36,7 @@
         try {
           // Axios를 사용하여 GET 요청 보내기
           const response = await axios.get(`http://localhost/movies/${movieId}`);
-  
+          console.log(movieId)
           // API 응답이 현재 데이터와 유사한 구조를 가진다고 가정합니다
           this.selectedMovie = response.data;
         } catch (error) {
