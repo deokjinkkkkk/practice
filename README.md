@@ -1,1 +1,1 @@
-vue,SpringBoot,oralce을 사용하여 CRD 게시판과 영화 api를 불러오기
+**VUE 를사용해서 영화 정보 제공하기 **
